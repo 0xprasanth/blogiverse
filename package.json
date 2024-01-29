@@ -1,6 +1,6 @@
 {
   "name": "react-blog",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
@@ -17,7 +17,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "release": "standard-version"
+    "release": "standard-version",
+    "push": "git push --follow-tags origin main"
   },
   "eslintConfig": {
     "extends": [
