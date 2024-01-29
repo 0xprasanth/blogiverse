@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/ptech12/blogiverse/compare/v0.2.0...v0.3.0) (2024-01-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* **app:** Add Routes to Route components
+
+### Features
+
+* **app:** Add  and display component ([c7ea90d](https://github.com/ptech12/blogiverse/commit/c7ea90d235f7bf150ba39cd1629c41000ce72273))
+
+
+### Bug Fixes
+
+* **app:** Add Routes to Route components ([8d96ccd](https://github.com/ptech12/blogiverse/commit/8d96ccd7db8d85d88c4b55f15f2b29a47d9883e3))
+* **app:** change from basic to actual definition of elements ([969d542](https://github.com/ptech12/blogiverse/commit/969d542fa3d01bd0f2a27cd4366e609291d58381))
+
 ## 0.2.0 (2024-01-29)
 
 
