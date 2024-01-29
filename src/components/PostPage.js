@@ -2,7 +2,9 @@ import React from 'react'
 
 const PostPage = () => {
   return (
-    <div>PostPage</div>
+    <main>
+        <h1>PostPage</h1>
+    </main>
   )
 }
 
