@@ -10,7 +10,7 @@ const Home = ({ posts }) => {
           // props drilling down to Feed Component
           <Feed posts={posts} />
         ) : (
-          <p style={{}}>
+          <p style={{fontSize:'1.2rem'}}>
             No posts here
           </p>
         )
