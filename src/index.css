@@ -118,3 +118,22 @@ body {
   position: absolute;
   left: -999999px;
 }
+
+.Home{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  width: 100%;
+  font-size: 1.2rem;
+  
+}
+
+footer{
+  background-color: #ddd;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: .75rem;
+}
