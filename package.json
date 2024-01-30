@@ -18,8 +18,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "release": "standard-version",
-    "push": "git push --follow-tags origin main",
-    "release-push": "npm run release && npm run push"
+    "push": "git push -u origin main",
+    "release-push": "npm run release && npm run push "
   },
   "eslintConfig": {
     "extends": [
