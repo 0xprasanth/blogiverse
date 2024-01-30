@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.8.0](https://github.com/ptech12/blogiverse/compare/v0.7.2...v0.8.0) (2024-01-30)
+
+
+### ⚠ BREAKING CHANGES
+
+* **core:** The all new Feed component displays all posts drilled down from Home Component
+
+### Features
+
+* **core:** introduction of new component 'Feed' to display feeds ([e0e5190](https://github.com/ptech12/blogiverse/commit/e0e51906d3a206a6e94f682bd5bd71ee3030d273))
+
 ### [0.7.2](https://github.com/ptech12/blogiverse/compare/v0.7.1...v0.7.2) (2024-01-30)
 
 
