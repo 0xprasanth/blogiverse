@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.1](https://github.com/ptech12/blogiverse/compare/v0.3.0...v0.3.1) (2024-01-30)
+
+
+### Bug Fixes
+
+* **app:** react-route-dom feature downgrade ([6e78e1b](https://github.com/ptech12/blogiverse/commit/6e78e1ba4d2d03e2262207c6fe2ca55e36dc6acd))
+* **app:** remove react-router-dom ([890a1ee](https://github.com/ptech12/blogiverse/commit/890a1eee1708f20ef5873fe933da89e8559ad684))
+* **core:** app is back online ([151c733](https://github.com/ptech12/blogiverse/commit/151c733a22e8c66cb5fcddebd5376f8cb0bd628c))
+* **core:** Revert to start ([acf1bb8](https://github.com/ptech12/blogiverse/commit/acf1bb8bdfd39b307c88f179f5dd22da39b2147c))
+
 ## [0.3.0](https://github.com/ptech12/blogiverse/compare/v0.2.0...v0.3.0) (2024-01-29)
 
 
