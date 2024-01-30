@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.0](https://github.com/ptech12/blogiverse/compare/v0.3.1...v0.4.0) (2024-01-30)
+
+
+### ⚠ BREAKING CHANGES
+
+* **core:** react-router-dom support install
+
+### Bug Fixes
+
+* **core:** react-router-dom support install ([87112c2](https://github.com/ptech12/blogiverse/commit/87112c23d376be649b6d0aa2b2dcc8977d6c722f))
+
 ### [0.3.1](https://github.com/ptech12/blogiverse/compare/v0.3.0...v0.3.1) (2024-01-30)
 
 
