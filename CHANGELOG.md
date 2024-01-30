@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.7.2](https://github.com/ptech12/blogiverse/compare/v0.7.1...v0.7.2) (2024-01-30)
+
+
+### Features
+
+* **app:** add new useState hook for posts and search lists ([4d676a1](https://github.com/ptech12/blogiverse/commit/4d676a1b77bd6fa6a1674d57b6706a9c2fff04d3))
+* **app:** use posts data and handling functions to Nav component ([07b9ff8](https://github.com/ptech12/blogiverse/commit/07b9ff8e13b2dd5c3b6b4556989f6b541d66e9e4))
+
+
+### Bug Fixes
+
+* **npm:** changes to push only with no tags ([a96f582](https://github.com/ptech12/blogiverse/commit/a96f58271de1aeda1fda262240ceda619f11adf2))
+* **style:** new paddings style for search bar ([311a85c](https://github.com/ptech12/blogiverse/commit/311a85cf1fbd4bb76b0fe3778d799597cad7655c))
+
 ### [0.7.1](https://github.com/ptech12/blogiverse/compare/v0.7.0...v0.7.1) (2024-01-30)
 
 ## [0.7.0](https://github.com/ptech12/blogiverse/compare/v0.6.0...v0.7.0) (2024-01-30)
