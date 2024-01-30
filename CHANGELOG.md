@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.9.0](https://github.com/ptech12/blogiverse/compare/v0.8.1...v0.9.0) (2024-01-30)
+
+
+### ⚠ BREAKING CHANGES
+
+* **core:** by use of props drill down, I managed to pass data to different components with least error
+
+### Features
+
+* **app:** get the props from parent and display the results ([26bee06](https://github.com/ptech12/blogiverse/commit/26bee06b25f44cd41b5567a9e62b7e72168a6d0b))
+* **core:** add new component Feed and Post to display the posts ([48c629c](https://github.com/ptech12/blogiverse/commit/48c629c99848478e30df14c6024b68d97e6afab2))
+* **style:** new improved styles for Post and Feed component ([b2dfa74](https://github.com/ptech12/blogiverse/commit/b2dfa74a7667434c64ab2b5284134b4c8cc3682b))
+* **style:** new styles for feed component and also for footer component ([658fafe](https://github.com/ptech12/blogiverse/commit/658fafe8c4deea8b70a985ff6009d21324ed18af))
+
+
+### Bug Fixes
+
+* **data:** add new data such as username and data&time ([c97bc20](https://github.com/ptech12/blogiverse/commit/c97bc20d266778b1ab6127acb8e009c4a07f7350))
+
 ### [0.8.1](https://github.com/ptech12/blogiverse/compare/v0.8.0...v0.8.1) (2024-01-30)
 
 ## [0.8.0](https://github.com/ptech12/blogiverse/compare/v0.7.2...v0.8.0) (2024-01-30)
