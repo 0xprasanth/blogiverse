@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.6.0](https://github.com/ptech12/blogiverse/compare/v0.5.0...v0.6.0) (2024-01-30)
+
+
+### ⚠ BREAKING CHANGES
+
+* The use of Routes and Route are identify and with help element props instead of component
+
+* feat(core)!!: routes are stable now ([695a486](https://github.com/ptech12/blogiverse/commit/695a486be87b6469d1cd811bb6f2896f37c4d42b))
+
 ## [0.5.0](https://github.com/ptech12/blogiverse/compare/v0.4.0...v0.5.0) (2024-01-30)
 
 
