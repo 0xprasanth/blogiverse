@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins&famil=Roboto&display=swap');
 
 *, *::after, *::before{
   box-sizing: border-box;
@@ -51,6 +51,8 @@ body {
 
 .Header h1{
   font-size: 1.2rem;
+  /* font-family: 'Roboto', sans-serif; */
+
 }
 
 .Nav{
@@ -119,21 +121,59 @@ body {
   left: -999999px;
 }
 
-.Home{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.Home, .NewPost, .NotFound, .About{
   flex-grow: 1;
   width: 100%;
   font-size: 1.2rem;
-  
+  background-color: #fff;
+  overflow-y: auto;
+  padding: 1rem;
 }
+
+
+
+/* Post styles */
+.post{
+  width: 100%;
+  padding-bottom: 1rem;
+  margin-top: 1rem;
+  border-bottom: 1px solid lightgray;
+
+}
+
+
+
+.post a,
+.post a:visited{
+  color: #000;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+}
+
+.post:first-child{
+  margin-top: 0;
+}
+
+.post:last-child{
+  border-bottom: none;
+}
+
+.postData{
+  font-size: .8rem;
+  margin: .5rem 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.postBody{
+  margin: .75rem 0;
+}
+
 
 footer{
   background-color: #ddd;
   width: 100%;
+  font-size: .75rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: .75rem;
 }
