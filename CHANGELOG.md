@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.5.0](https://github.com/ptech12/blogiverse/compare/v0.4.0...v0.5.0) (2024-01-30)
+
+
+### ⚠ BREAKING CHANGES
+
+* **core:** use of react v18 and node v18
+
+### Features
+
+* **core:** add router ([3ce09e8](https://github.com/ptech12/blogiverse/commit/3ce09e8daf835949ac10ca89bd594f31aa6a749c))
+
 ## [0.4.0](https://github.com/ptech12/blogiverse/compare/v0.3.1...v0.4.0) (2024-01-30)
 
 
