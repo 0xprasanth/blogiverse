@@ -101,8 +101,17 @@ body {
 
 
 
-.searchForm input{
+.searchForm input[type='text']{
   padding: .5rem;
+  padding-left: 1rem;
+  border-radius: 1rem;
+  width: 100%;
+  /* padding: 1rem; */
+  font-family: 'Open Sans', sans-serif;
+  outline: none;
+  border: 1px solid #66d8f5;
+  
+
 }
 
 .searchForm label{
