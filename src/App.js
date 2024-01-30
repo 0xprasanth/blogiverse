@@ -7,21 +7,23 @@ import Nav from "./components/Nav";
 import NewPost from "./components/NewPost";
 import NotFound from "./components/NotFound";
 import PostPage from "./components/PostPage";
+import { postData } from './data/posts'
 // router-dom import
 import { Routes, Route, Link } from "react-router-dom";
 
 function App() {
   // using states for posts
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState(postData);
   // for search items
   const [search, setSearch] = useState('');
-
+  // search results
+  const [searchResult, setSearchResult] = useState([]);
 
   return (
     <div className="App">
-      <Nav />
+      <Nav search={search} setSearch={setSearch} />
       <Routes>
-        <Route exact path="/" element={<Home />}/>
+        <Route exact path="/" element={<Home posts={posts} />}/>
         <Route path="/post" element={<NewPost />}/>
         <Route path="/post/:id" element={<PostPage />}/>
         <Route path="/about" element={<About />}/>
