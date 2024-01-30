@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.7.0](https://github.com/ptech12/blogiverse/compare/v0.6.0...v0.7.0) (2024-01-30)
+
+
+### ⚠ BREAKING CHANGES
+
+* **core:** by combining release and pushing to github, I have automated the same in single command
+
+### Features
+
+* **app:** add Nav bar ([ebe85ec](https://github.com/ptech12/blogiverse/commit/ebe85ecc7fc4cac94bcb23db25795c957db847e3))
+* **core:** add page navigation ([3730edc](https://github.com/ptech12/blogiverse/commit/3730edcb5e06c37e1bbc067dd5fe58ec6769ca62))
+* **style:** add nav and header styles. ([d06d877](https://github.com/ptech12/blogiverse/commit/d06d8778331ec84a212f88a95581ef5b21e4bdca))
+
+
+### Bug Fixes
+
+* **core:** add new script for automated releae ([834726c](https://github.com/ptech12/blogiverse/commit/834726c82d7d24335eb45f12c712cedf068a3f36))
+
 ## [0.6.0](https://github.com/ptech12/blogiverse/compare/v0.5.0...v0.6.0) (2024-01-30)
 
 
