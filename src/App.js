@@ -11,6 +11,12 @@ import PostPage from "./components/PostPage";
 import { Routes, Route, Link } from "react-router-dom";
 
 function App() {
+  // using states for posts
+  const [posts, setPosts] = useState([]);
+  // for search items
+  const [search, setSearch] = useState('');
+
+
   return (
     <div className="App">
       <Nav />
