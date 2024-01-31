@@ -121,7 +121,7 @@ body {
   left: -999999px;
 }
 
-.Home, .NewPost, .NotFound, .About{
+.Home, .PostPage, .NotFound, .About{
   flex-grow: 1;
   width: 100%;
   font-size: 1.2rem;
@@ -140,8 +140,6 @@ body {
   border-bottom: 1px solid lightgray;
 
 }
-
-
 
 .post a,
 .post a:visited{
@@ -167,6 +165,31 @@ body {
 .postBody{
   margin: .75rem 0;
 }
+
+.deleteBtn{
+  font-size: 1rem;
+  padding: .5rem;
+  width: 20%;
+  background-color: red;
+  color: white;
+  outline: none;
+  border: none;
+  margin-top: 1rem;
+}
+
+.deleteBtn:hover,
+.deleteBtn:focus{
+  /* box-shadow: -5px 5px 5px rgba(0, 0, 0, .4); */
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, .4);
+}
+
+.deleteBtn:active{
+  box-shadow: -5px 5px 5px rgba(0, 0, 0, .4);
+
+}
+
+
+
 
 
 footer{
