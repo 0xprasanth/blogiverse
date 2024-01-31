@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.9.1](https://github.com/ptech12/blogiverse/compare/v0.9.0...v0.9.1) (2024-01-31)
+
+
+### Features
+
+* **app:** add handleDelete function to delete the given post :id ([1572dd8](https://github.com/ptech12/blogiverse/commit/1572dd8273e4b1a89717924818678d55c76e3fc9))
+* **app:** create Post Page that displays the posts given the :id as params ([dd82db9](https://github.com/ptech12/blogiverse/commit/dd82db91439d2df70055549dad09eb33606359e7))
+* **docs:** add key concepts and future plans ([0e1e4f2](https://github.com/ptech12/blogiverse/commit/0e1e4f2c3432bd0abae50d4747b0e00fbd179fb5))
+
+
+### Bug Fixes
+
+* **style:** add styles for PostPage with delete button ([b4e50f8](https://github.com/ptech12/blogiverse/commit/b4e50f8f015fef9e64343f3edc74c9298d298823))
+
 ## [0.9.0](https://github.com/ptech12/blogiverse/compare/v0.8.1...v0.9.0) (2024-01-30)
 
 
