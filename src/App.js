@@ -19,13 +19,19 @@ function App() {
   // search results
   const [searchResult, setSearchResult] = useState([]);
 
+  /* habndle dfelete */
+  const handleDelete = id => {
+    
+  }
+
+
   return (
     <div className="App">
       <Nav search={search} setSearch={setSearch} />
       <Routes>
         <Route exact path="/" element={<Home posts={posts} />}/>
         <Route path="/post" element={<NewPost />}/>
-        <Route path="/post/:id" element={<PostPage />}/>
+        <Route path="/post/:id" element={<PostPage posts={posts} handleDelete={handleDelete}/>}/>
         <Route path="/about" element={<About />}/>
         {/* not found */}
         <Route path="*" element={<NotFound />} />
