@@ -1,9 +1,11 @@
 import React from 'react'
 
-const Footer = () => {
+const Footer = ({ postsCount }) => {
   return (
     <footer>
-        <h1>Footer</h1>
+        <h3>
+          {postsCount} Posts 
+        </h3>
     </footer>
   )
 }

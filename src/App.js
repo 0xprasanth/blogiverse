@@ -37,7 +37,7 @@ function App() {
     <Routes>
       <Route
         path="/"
-        element={<Layout search={search} setSearch={setSearch} />}
+        element={<Layout postsCount={posts.length} search={search} setSearch={setSearch} />}
       >
 
       {/* index will be replaced by <Outlet /> component */}
