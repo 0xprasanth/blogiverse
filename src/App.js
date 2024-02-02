@@ -9,7 +9,7 @@ import NotFound from "./components/NotFound";
 import PostPage from "./components/PostPage";
 import { postData } from './data/posts'
 // router-dom import
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 
 function App() {
   // using states for posts
@@ -19,9 +19,13 @@ function App() {
   // search results
   const [searchResult, setSearchResult] = useState([]);
 
+  const navigate = useNavigate(); 
+
   /* habndle dfelete */
   const handleDelete = id => {
-    
+    const postList = posts.filter(post => post.id !== id);
+
+    setPosts(postList);
   }
 
 
