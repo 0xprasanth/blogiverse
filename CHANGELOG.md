@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.10.0](https://github.com/ptech12/blogiverse/compare/v0.9.1...v0.10.0) (2024-02-02)
+
+
+### ⚠ BREAKING CHANGES
+
+* **app:** we set to use react-router-dom@v6 that uses most advanced feature to implement the routes and route components
+
+### Features
+
+* **app:** Majoy Layout changes with Outlet component ([73a9bf3](https://github.com/ptech12/blogiverse/commit/73a9bf35cab16f650e706eb4cfc2b6f45c5cd5f2))
+
+
+### Bug Fixes
+
+* **app:** minor react-router-dom changes with routes, route ([c8f0cd1](https://github.com/ptech12/blogiverse/commit/c8f0cd1e7c7dfd4b1572388783f619b8ec942441))
+
 ### [0.9.1](https://github.com/ptech12/blogiverse/compare/v0.9.0...v0.9.1) (2024-01-31)
 
 
