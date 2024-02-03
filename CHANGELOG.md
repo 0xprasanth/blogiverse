@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.10.1](https://github.com/ptech12/blogiverse/compare/v0.10.0...v0.10.1) (2024-02-03)
+
+
+### Bug Fixes
+
+* **app:** add github link ([4514c17](https://github.com/ptech12/blogiverse/commit/4514c178b473b6c06f2de813547d64fa4648a42b))
+* **app:** Now footer get the total no. of posts in the app ([87d1642](https://github.com/ptech12/blogiverse/commit/87d16423e9447586d838b09ea48d2456fd1265b0))
+
 ## [0.10.0](https://github.com/ptech12/blogiverse/compare/v0.9.1...v0.10.0) (2024-02-02)
 
 
