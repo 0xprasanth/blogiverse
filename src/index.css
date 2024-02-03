@@ -200,14 +200,9 @@ footer{
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: .5rem;
+  padding: .35rem;
 }
-.footer{
-  width: 25%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.footer a{
-  /* width: 10%; */
+
+.github{
+  left: 50%;
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from './Header';
 import { Link } from 'react-router-dom';
+import logo from '../asset/github-mark-white.svg'
 
 const Nav = ({search, setSearch}) => {
   return (
@@ -31,6 +32,15 @@ const Nav = ({search, setSearch}) => {
         </li>
         <li>
           <Link to={'/about'}>About</Link>
+        </li>
+        {/*         <a href="http://github.com/ptech12/blogiverse" target="_blank" rel="noopener noreferrer"
+        >
+          
+        </a> */}
+        <li className='github'>
+          <Link to={"http://github.com/ptech12/blogiverse"} target='_blank' rel='noopener noreferrer'>
+             <img src={logo} style={{ width: '20%' }}/>
+          </Link>
         </li>
       </ul>
     
