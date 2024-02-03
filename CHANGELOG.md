@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.11.0](https://github.com/ptech12/blogiverse/compare/v0.10.1...v0.11.0) (2024-02-03)
+
+
+### ⚠ BREAKING CHANGES
+
+* **app:** Nav bar style changes, github link moved up within NAV.
+
+### Bug Fixes
+
+* **app:** nav changes, and styles ([726519b](https://github.com/ptech12/blogiverse/commit/726519b2b9d32592efb6dc1394d684a9570abfaf))
+
 ### [0.10.1](https://github.com/ptech12/blogiverse/compare/v0.10.0...v0.10.1) (2024-02-03)
 
 
