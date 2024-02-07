@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.13.0](https://github.com/ptech12/blogiverse/compare/v0.12.0...v0.13.0) (2024-02-07)
+
+
+### ⚠ BREAKING CHANGES
+
+* **app:** a NewPost component to create new posts using form tag along controlled state inputs
+
+### Bug Fixes
+
+* **app:** create NewPost component with form tag ([2f9b9f1](https://github.com/ptech12/blogiverse/commit/2f9b9f127a060cda54b599a493bd8d68c773e328))
+* **style:** new styles for new post component ([22f2ef2](https://github.com/ptech12/blogiverse/commit/22f2ef2c036b5c6bf858461d62fd41b93084b797))
+
 ## [0.12.0](https://github.com/ptech12/blogiverse/compare/v0.11.0...v0.12.0) (2024-02-07)
 
 
