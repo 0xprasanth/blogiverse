@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.12.0](https://github.com/ptech12/blogiverse/compare/v0.11.0...v0.12.0) (2024-02-07)
+
+
+### ⚠ BREAKING CHANGES
+
+* **core:** to create new posts, create new state like postTitle, postBody, handleSubmit function
+to NewPost component
+
+### Features
+
+* **core:** add handleSubmit, and state to New post component ([feffe9b](https://github.com/ptech12/blogiverse/commit/feffe9b3436ac40e0c2c17aca860ed9a6bb40d6a))
+
 ## [0.11.0](https://github.com/ptech12/blogiverse/compare/v0.10.1...v0.11.0) (2024-02-03)
 
 
