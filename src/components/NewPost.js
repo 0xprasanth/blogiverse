@@ -1,11 +1,45 @@
-import React from 'react'
+import React from "react";
 
-const NewPost = () => {
+const NewPost = ({
+  handleSubmit,
+  postTitle,
+  setPostTitle,
+  postBody,
+  setPostBody,
+}) => {
   return (
-    <main>
-        <h1>new post</h1>
+    <main className="NewPost">
+      <h2>New Post</h2>
+      <form onSubmit={handleSubmit} className="newPostForm">
+        {/* input title */}
+        <label htmlFor="postTitle">Post title: </label>
+        <input
+          type="text"
+          name="postTitle"
+          id="postTitle"
+          value={postTitle}
+          onChange={(e) => setPostTitle(e.target.value)}
+          required
+          placeholder="post title goes here"
+        />
+        {/* post body */}
+        <label htmlFor="postBody">Post: </label>
+        <textarea 
+          name="postBody" 
+          id="postBody" 
+          cols="30" 
+          rows="5"
+          value={postBody}
+          onChange={e => setPostBody(e.target.value)}
+          placeholder="Body of the post"
+        />
+        {/* submit button */}
+        <button type="submit">
+          Submit
+        </button>
+      </form>
     </main>
-  )
-}
+  );
+};
 
-export default NewPost
+export default NewPost;
