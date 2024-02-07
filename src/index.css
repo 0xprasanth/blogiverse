@@ -121,7 +121,7 @@ body {
   left: -999999px;
 }
 
-.Home, .PostPage, .NotFound, .About{
+.Home, .PostPage, .NewPost, .NotFound, .About{
   flex-grow: 1;
   width: 100%;
   font-size: 1.2rem;
@@ -188,7 +188,34 @@ body {
 
 }
 
+.newPostForm{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; 
+  align-items: center; */
+  /* padding: .5rem; */
+  /* margin: .5rem; */
+}
 
+
+.newPostForm textarea,
+.newPostForm input{
+  margin: .5rem;
+  padding: .5rem;
+  font-size: 1rem;
+}
+
+.newPostForm button{
+  width: 100%;
+  text-align: center;
+  margin: .5rem;
+  padding: .5rem;
+  /* position: absolute;
+  left: 50%;
+  top: 70%;
+  transform: translate(-50%, -50%); */
+  font-size: 1.2rem;
+}
 
 
 
