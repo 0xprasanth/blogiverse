@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.14.0](https://github.com/ptech12/blogiverse/compare/v0.13.1...v0.14.0) (2024-02-08)
+
+
+### ⚠ BREAKING CHANGES
+
+* **app:** search and filter logic is used in useEffect hooks to automatically refresh onChange
+
+### Features
+
+* **app:** now search and filter items logic add and finished ([260019b](https://github.com/ptech12/blogiverse/commit/260019b57ff64dd2982a347d3137042f0c4dc3ad))
+
 ### [0.13.1](https://github.com/ptech12/blogiverse/compare/v0.13.0...v0.13.1) (2024-02-08)
 
 
