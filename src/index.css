@@ -130,6 +130,14 @@ body {
   padding: 1rem;
 }
 
+.NotFound{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 5rem;
+
+}
 
 
 /* Post styles */
