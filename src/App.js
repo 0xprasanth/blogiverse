@@ -11,6 +11,7 @@ import { postData } from "./data/posts";
 // router-dom import
 import { Routes, Route, useNavigate } from "react-router-dom";
 import Layout from "./components/Layout";
+import { format, formatRelative } from "date-fns";
 
 function App() {
   // using states for posts
@@ -22,13 +23,28 @@ function App() {
   // new post state
   const [postTitle, setPostTitle] = useState('')
   const [postBody, setPostBody] = useState('')
+  const navigate = useNavigate();
+
+  
+
+
 
   /* handle submit func to submit new post */
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.target.preventDefault();
+    const id = posts.length ? posts[posts.length - 1].id + 1 : 1;
+    const datetime = format(new Date(), 'MMMM dd, yyyy pp'); 
+    const newPost = { id, title: postTitle, datetime, body: postBody};
+
+    const allPosts = { ...posts, newPost};
+    setPosts(allPosts);
+    setPostTitle('');
+    setPostBody('');
+    navigate('/');
+
 
   }
 
-  const navigate = useNavigate();
 
   /* habndle delete */
   const handleDelete = (id) => {
