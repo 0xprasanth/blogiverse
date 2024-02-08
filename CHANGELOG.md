@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.14.2](https://github.com/ptech12/blogiverse/compare/v0.14.1...v0.14.2) (2024-02-08)
+
+
+### Bug Fixes
+
+* **app:** notfound component finish ([8fd105e](https://github.com/ptech12/blogiverse/commit/8fd105e63ac321ac6b6a15294e1ab6a1dcbd936b))
+
 ### [0.14.1](https://github.com/ptech12/blogiverse/compare/v0.14.0...v0.14.1) (2024-02-08)
 
 
