@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.14.1](https://github.com/ptech12/blogiverse/compare/v0.14.0...v0.14.1) (2024-02-08)
+
+
+### Features
+
+* **asset:** add dotted-face emoji to asset directory ([8418a4d](https://github.com/ptech12/blogiverse/commit/8418a4dddf0d48d193254512e3e766e88ccaa855))
+
 ## [0.14.0](https://github.com/ptech12/blogiverse/compare/v0.13.1...v0.14.0) (2024-02-08)
 
 
