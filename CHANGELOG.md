@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.13.1](https://github.com/ptech12/blogiverse/compare/v0.13.0...v0.13.1) (2024-02-08)
+
+
+### Bug Fixes
+
+* **app:** add date-fns library support ([4829ff8](https://github.com/ptech12/blogiverse/commit/4829ff820a04d224920ba7af75593832d9d19a08))
+* **app:** update and fix handleSubmit function for NewPosts component ([9f0d828](https://github.com/ptech12/blogiverse/commit/9f0d828b2dd848070e326522ea9bdbec3b70d34b))
+
 ## [0.13.0](https://github.com/ptech12/blogiverse/compare/v0.12.0...v0.13.0) (2024-02-07)
 
 
