@@ -32,7 +32,7 @@ export const postData = [
     date: "May 22, 2020 06:27 PM",
     id: 5,
     title: "nesciunt quas odio",
-    body: "repudiandae veniam quaerat sunt sed\nalias aut fugiat sit autem sed est\nvoluptatem omnis possimus esse voluptatibus quis\nest aut tenetur dolor neque",
+    body: "repudiandae veniam quaerat sunt sed\nalias aut fugiat sit autem sed est\nvoluptatem omnis possimus esse voluptati  bus quis\nest aut tenetur dolor neque",
   },
   {
         id: 6,

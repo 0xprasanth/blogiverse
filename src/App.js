@@ -25,22 +25,36 @@ function App() {
   const [postBody, setPostBody] = useState('')
   const navigate = useNavigate();
 
+  /*
+    posts X search are dependency 
+    as our search input provides new data
+    to the [search's] essentially filter the posts
+    that both matches [search] 
+  */
+  useEffect(() => {
+    const filteredResults = posts.filter( post => 
+      (post.body).toLowerCase().includes(search.toLowerCase())
+      || // OR short circuit
+      (post.title).toLowerCase().includes(search.toLowerCase())
+    )
+    setSearchResult(filteredResults);
+  }, [posts, search])
   
 
 
 
   /* handle submit func to submit new post */
-  const handleSubmit = (e) => {
-    e.target.preventDefault();
+  const handleSubmit = e => {
+    e.preventDefault(); 
     const id = posts.length ? posts[posts.length - 1].id + 1 : 1;
     const datetime = format(new Date(), 'MMMM dd, yyyy pp'); 
     const newPost = { id, title: postTitle, datetime, body: postBody};
 
-    const allPosts = { ...posts, newPost};
+    const allPosts = [...posts, newPost];
     setPosts(allPosts);
     setPostTitle('');
     setPostBody('');
-    navigate('/');
+    navigate("/");
 
 
   }
@@ -66,7 +80,7 @@ function App() {
 
       {/* index will be replaced by <Outlet /> component */}
 
-      <Route index element={<Home posts={posts} />} />
+      <Route index element={<Home posts={searchResult} />} />
 
       <Route path="post">
         
