@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.15.0](https://github.com/ptech12/blogiverse/compare/v0.14.4...v0.15.0) (2024-02-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* **core:** now serving db.json using fake json server and fetching with axios API
+
+### Features
+
+* **core:** convert to json file structure ([f8cbdeb](https://github.com/ptech12/blogiverse/commit/f8cbdeb05cd43566c5f1101b29200534ab9cdf7b))
+
+
+### Bug Fixes
+
+* **app:** add support lib axios ([99a6492](https://github.com/ptech12/blogiverse/commit/99a649267c115e3b785f38ae2a16716d37907bf2))
+* **server:** local json-server up and running ([47a2468](https://github.com/ptech12/blogiverse/commit/47a24686d64ff0c4e614b308f58617a853b39ecd))
+
 ### [0.14.4](https://github.com/ptech12/blogiverse/compare/v0.14.3...v0.14.4) (2024-02-09)
 
 
