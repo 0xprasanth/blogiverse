@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.14.4](https://github.com/ptech12/blogiverse/compare/v0.14.3...v0.14.4) (2024-02-09)
+
+
+### Bug Fixes
+
+* **app:** change length of the post to the length of searchResult ([47adb14](https://github.com/ptech12/blogiverse/commit/47adb1450b27eeda4ec76769f83fc3a27d1d9df8))
+
 ### [0.14.3](https://github.com/ptech12/blogiverse/compare/v0.14.2...v0.14.3) (2024-02-08)
 
 
