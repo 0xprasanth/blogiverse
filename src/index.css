@@ -7,18 +7,18 @@
 }
 
 html{
-  font-size: 16px;
+  font-size: 16px; 
 }
 
 body {
   font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   min-height: 100vh;
-  /* background-color: #eee; */
+  display: flex;
+  /* justify-content: center;
+  align-items: center; */
+  background-color: #efefef;
 }
 
 #root{
@@ -30,7 +30,7 @@ body {
 
 .App{
   width: 100%;
-  max-width: 800px;
+  max-width: 600px;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -43,9 +43,8 @@ body {
   width: 100%;
   background-color: #66d8f5;
   padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  place-content: center;
 }
 
 

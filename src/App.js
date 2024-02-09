@@ -1,9 +1,6 @@
 import { useState, useEffect } from "react";
 import About from "./components/About";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
 import Home from "./components/Home";
-import Nav from "./components/Nav";
 import NewPost from "./components/NewPost";
 import NotFound from "./components/NotFound";
 import PostPage from "./components/PostPage";
@@ -15,7 +12,7 @@ import { format, formatRelative } from "date-fns";
 
 function App() {
   // using states for posts
-  const [posts, setPosts] = useState(postData);
+  const [posts, setPosts] = useState([]]);
   // for search items
   const [search, setSearch] = useState("");
   // search results
