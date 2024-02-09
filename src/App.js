@@ -4,15 +4,14 @@ import Home from "./components/Home";
 import NewPost from "./components/NewPost";
 import NotFound from "./components/NotFound";
 import PostPage from "./components/PostPage";
-import { postData } from "../data/dummy";
 // router-dom import
 import { Routes, Route, useNavigate } from "react-router-dom";
 import Layout from "./components/Layout";
-import { format, formatRelative } from "date-fns";
+import { format } from "date-fns";
 
 function App() {
   // using states for posts
-  const [posts, setPosts] = useState([]]);
+  const [posts, setPosts] = useState([]);
   // for search items
   const [search, setSearch] = useState("");
   // search results
