@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.15.1](https://github.com/ptech12/blogiverse/compare/v0.15.0...v0.15.1) (2024-02-09)
+
+
+### Bug Fixes
+
+* **app:** minor bug fixes ( missed a comma) ([b2d189c](https://github.com/ptech12/blogiverse/commit/b2d189c07f46277abbda86d473a7b1627fb9ffb7))
+* **doc:** update README.md docs ([6b9b77c](https://github.com/ptech12/blogiverse/commit/6b9b77c0ccc5438867b2fe7ee9e67613899db5ee))
+
 ## [0.15.0](https://github.com/ptech12/blogiverse/compare/v0.14.4...v0.15.0) (2024-02-09)
 
 
