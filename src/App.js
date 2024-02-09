@@ -4,7 +4,7 @@ import Home from "./components/Home";
 import NewPost from "./components/NewPost";
 import NotFound from "./components/NotFound";
 import PostPage from "./components/PostPage";
-import { postData } from "./data/posts";
+import { postData } from "../data/dummy";
 // router-dom import
 import { Routes, Route, useNavigate } from "react-router-dom";
 import Layout from "./components/Layout";
