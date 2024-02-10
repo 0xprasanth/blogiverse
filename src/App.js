@@ -8,6 +8,8 @@ import PostPage from "./components/PostPage";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import Layout from "./components/Layout";
 import { format } from "date-fns";
+// api routes
+import api from './api/posts'
 
 function App() {
   // using states for posts
@@ -20,6 +22,29 @@ function App() {
   const [postTitle, setPostTitle] = useState('')
   const [postBody, setPostBody] = useState('')
   const navigate = useNavigate();
+
+
+  useEffect(()=>{
+    const fetchPosts = async () => {
+      try{
+        const resp = await api.get('/posts');
+        /*  axios automatically converts to json object */
+        setPosts(resp.data);
+      }catch (err) {
+        /* Nog in the 200 response range */
+        /* know what you are dealing with backend */
+        /* know what you will get from the backend */
+        if (err.resp) {
+          console.error(err.resp.data);
+          console.log(err.resp.status);
+          console.log(err.resp.headers);
+        }else{
+          console.log(`Error: ${err.message}`);
+        }
+      }
+    }
+    fetchPosts();
+  }, []) 
 
   /*
     posts X search are dependency 
