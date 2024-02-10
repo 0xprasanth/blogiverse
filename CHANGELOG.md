@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.16.1](https://github.com/ptech12/blogiverse/compare/v0.16.0...v0.16.1) (2024-02-10)
+
+
+### Bug Fixes
+
+* **api:** data CRUD operation using axios ([e35008d](https://github.com/ptech12/blogiverse/commit/e35008d588dfabaa3d0c8943dc52fde1181ea150))
+
 ## [0.16.0](https://github.com/ptech12/blogiverse/compare/v0.15.1...v0.16.0) (2024-02-10)
 
 
