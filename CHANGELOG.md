@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.16.2](https://github.com/ptech12/blogiverse/compare/v0.16.1...v0.16.2) (2024-02-10)
+
+
+### Features
+
+* **app:** edit post page add ([8c1b3bf](https://github.com/ptech12/blogiverse/commit/8c1b3bfeab272d0ae1f50b200f52ce22be649c0e))
+
+
+### Bug Fixes
+
+* **app:** implment handleEdit logic ([99421e8](https://github.com/ptech12/blogiverse/commit/99421e8da0ca984dfe825aa75de517105895544d))
+
 ### [0.16.1](https://github.com/ptech12/blogiverse/compare/v0.16.0...v0.16.1) (2024-02-10)
 
 
