@@ -10,6 +10,7 @@ import Layout from "./components/Layout";
 import { format } from "date-fns";
 // api routes
 import api from './api/posts'
+import EditPost from "./components/EditPost";
 
 function App() {
   // using states for posts
@@ -140,11 +141,24 @@ function App() {
             setPostBody={setPostBody}
           />
         } />
+        
         <Route
           path="/post/:id"
           element={<PostPage posts={posts} handleDelete={handleDelete} />}
           />
         
+      </Route>
+      <Route path="edit">
+          <Route 
+          element={
+          <EditPost
+            posts={posts}
+            handleEdit={handleEdit}
+            editBody={editBody}
+            setEditBody={setEditBody}
+            setEditTitle={setEditTitle}
+            editTitle={editTitle}
+          />} />
       </Route>
 
       <Route path="about" element={<About />} />

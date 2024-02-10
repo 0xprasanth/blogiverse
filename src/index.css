@@ -192,7 +192,27 @@ body {
 
 .deleteBtn:active{
   box-shadow: -5px 5px 5px rgba(0, 0, 0, .4);
+}
+.editButton{
+  font-size: 1rem;
+  padding: .5rem;
+  width: 20%;
+  background-color: blue;
+  color: white;
+  outline: none;
+  border: none;
+  margin-top: 1rem;
+  margin-right: 1.2rem;
+}
 
+.editButton:hover,
+.editButton:focus{
+  /* box-shadow: -5px 5px 5px rgba(0, 0, 0, .4); */
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, .4);
+}
+
+.editButton:active{
+  box-shadow: -5px 5px 5px rgba(0, 0, 0, .4);
 }
 
 .newPostForm{
