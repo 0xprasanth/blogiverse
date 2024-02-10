@@ -39,7 +39,7 @@ const Nav = ({search, setSearch}) => {
         </a> */}
         <li className='github'>
           <Link to={"http://github.com/ptech12/blogiverse"} target='_blank' rel='noopener noreferrer'>
-             <img src={logo} style={{ width: '20%' }}/>
+             <img src={logo} style={{ width: '20%' }} alt='github-logo'/>
           </Link>
         </li>
       </ul>

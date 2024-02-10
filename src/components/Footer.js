@@ -2,11 +2,7 @@ import React from 'react'
 
 
 const Footer = ({ postsCount }) => {
-  const logoStyles = {
-    width: '15%',
-    // height: '1rem'
 
-  }
   return (
     <footer>
       <div className="footer">
