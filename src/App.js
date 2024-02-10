@@ -21,6 +21,8 @@ function App() {
   // new post state
   const [postTitle, setPostTitle] = useState('')
   const [postBody, setPostBody] = useState('')
+  const [editTitle, setEditTitle] = useState('')
+  const [editBody, setEditBody] = useState('')
   const navigate = useNavigate();
 
 
@@ -65,33 +67,55 @@ function App() {
 
 
   /* handle submit func to submit new post */
-  const handleSubmit = e => {
+  const handleSubmit = async e=> {
+    // C in Create
     e.preventDefault(); 
     const id = posts.length ? posts[posts.length - 1].id + 1 : 1;
     const datetime = format(new Date(), 'MMM dd, yyyy p'); 
     const newPost = { id, title: postTitle, datetime, body: postBody};
-    console.log(id, datetime)
-    console.log(newPost);
 
-    const allPosts = [...posts, newPost];
-    setPosts(allPosts);
-    setPostTitle('');
-    setPostBody('');
-    navigate("/");
-
+    try {
+      const resp = await api.post('/posts', newPost)
+      const allPosts = [...posts, resp.data];
+      setPosts(allPosts);
+      setPostTitle('');
+      setPostBody('');
+      navigate("/");
+    } catch (err) {
+      console.error(`Error: ${err.message}`);
+      
+    }
 
   }
 
+  const handleEdit = async (id) => {
+    const datetime = format(new Date(), 'MMM dd, yyyy p'); 
+    const updatePost = { id, title: editTitle, datetime, body: editBody};
+    try {
+      // update block
+      const resp = await api.put(`/posts/${id}`, updatePost);
+      // only update the posts that match the id else keep it as it is
+      setPosts(posts.map(post => post.id === id ? { ...resp.data} : post))
+      setEditBody('');
+      setEditTitle('')
+      navigate("/");
+    } catch (err) {
+      console.error(`Error: ${err.message}`);
+      
+    }
+
+  }
 
   /* habndle delete */
-  const handleDelete = (id) => {
-    const postList = posts.filter((post) => post.id !== id);
-    // console.log(posts);
-    // console.log(postList);
-
-    setPosts(postList);
-
-    navigate("/");
+  const handleDelete = async (id) => {
+    // D for delete
+    try {
+      const postList = posts.filter((post) => post.id !== id);
+      setPosts(postList);
+      navigate("/");
+    } catch (err) {
+      console.error(`Error: ${err.message}`);
+    }
   };
 
   return (
