@@ -94,7 +94,7 @@ function App() {
     const updatePost = { id, title: editTitle, datetime, body: editBody};
     try {
       // update block
-      const resp = await api.put(`/posts/${id}`, updatePost);
+      const resp = await api.put(`/posts?id=${id}`, updatePost);
       // only update the posts that match the id else keep it as it is
       setPosts(posts.map(post => post.id === id ? { ...resp.data} : post))
       setEditBody('');
@@ -149,7 +149,7 @@ function App() {
         
       </Route>
       <Route path="edit">
-          <Route 
+          <Route path="/edit/:id"
           element={
           <EditPost
             posts={posts}
