@@ -24,15 +24,17 @@ function App() {
   const [postBody, setPostBody] = useState('')
   const [editTitle, setEditTitle] = useState('')
   const [editBody, setEditBody] = useState('')
+  
   const navigate = useNavigate();
 
 
   useEffect(()=>{
     const fetchPosts = async () => {
       try{
-        const resp = await api.get('/posts');
+        const resp = await api.get('/posts?limit=10');
         /*  axios automatically converts to json object */
-        setPosts(resp.data);
+        setPosts(resp.data.posts);
+        console.log(resp.data.posts);
       }catch (err) {
         /* Nog in the 200 response range */
         /* know what you are dealing with backend */
@@ -47,6 +49,7 @@ function App() {
       }
     }
     fetchPosts();
+    // console.log(posts);
   }, []) 
 
   /*

@@ -2,6 +2,16 @@ import { useParams, Link} from 'react-router-dom'
 
 const PostPage = ({ posts, handleDelete}) => {
   const { id } = useParams();
+  const user = posts.user || 'ananymous';
+  const displayTag = (tags) => {
+    return (
+      tags.map(newTag => {
+        console.log(newTag);
+        return newTag
+      })
+    )
+
+  }
   const post = posts.find(post => (post.id).toString() === id)
   return (
     <main className='PostPage'>
@@ -10,7 +20,7 @@ const PostPage = ({ posts, handleDelete}) => {
           post && 
             <>
               <h2>{post.title}</h2> 
-              <p className="postData">{post.user + " • " + post.date}</p>
+              <p className="postData">{user + " • " + displayTag(post.tags)}</p>
               <p className="postBody">{post.body}</p>
               <Link to={`/edit/${post.id}`}>
                 <button className="editButton">
