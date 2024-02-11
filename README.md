@@ -1,6 +1,6 @@
 # Blogiverse
 
-**A reactiverse app for all-in-one blog sharing tool**
+**A Reactiverse app for all-in-one blog sharing tool**
 
 
 ### Key Concepts Covered
