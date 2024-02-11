@@ -1,12 +1,12 @@
 import React from 'react'
 import Post from './Post'
 
-const Feed = ({ posts }) => {
+const Feed = ({ posts, users}) => {
   return (
     <>
         {
             posts.map(post => (
-                <Post key={post.id} post={post} />
+                <Post users={users} key={post.id} post={post} />
             ))
         }
     </>

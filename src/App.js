@@ -10,6 +10,7 @@ import Layout from "./components/Layout";
 import { format } from "date-fns";
 // api routes
 import api from './api/posts'
+import userApi from './api/users'
 import EditPost from "./components/EditPost";
 
 function App() {
@@ -24,7 +25,9 @@ function App() {
   const [postBody, setPostBody] = useState('')
   const [editTitle, setEditTitle] = useState('')
   const [editBody, setEditBody] = useState('')
-  
+  // user data
+  const [users, setUsers] = useState([])
+
   const navigate = useNavigate();
 
 
@@ -34,7 +37,6 @@ function App() {
         const resp = await api.get('/posts?limit=10');
         /*  axios automatically converts to json object */
         setPosts(resp.data.posts);
-        console.log(resp.data.posts);
       }catch (err) {
         /* Nog in the 200 response range */
         /* know what you are dealing with backend */
@@ -48,7 +50,22 @@ function App() {
         }
       }
     }
+    const fetchUsers = async () => {
+      try {
+        const response = await userApi.get('/users?limit=10')
+        setUsers(response.data.users)
+      } catch (err) {
+        if (err.resp) {
+          console.error(err.resp.data);
+          console.log(err.resp.status);
+          console.log(err.resp.headers);
+        }else{
+          console.log(`Error: ${err.message}`);
+        }
+      } 
+    }
     fetchPosts();
+    fetchUsers();
     // console.log(posts);
   }, []) 
 
@@ -131,7 +148,7 @@ function App() {
 
       {/* index will be replaced by <Outlet /> component */}
 
-      <Route index element={<Home posts={searchResult} />} />
+      <Route index element={<Home users={users} posts={searchResult} />} />
 
       <Route path="post">
         
@@ -147,7 +164,7 @@ function App() {
         
         <Route
           path="/post/:id"
-          element={<PostPage posts={posts} handleDelete={handleDelete} />}
+          element={<PostPage users={users} posts={posts} handleDelete={handleDelete} />}
           />
         
       </Route>

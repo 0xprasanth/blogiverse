@@ -1,23 +1,31 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 
-const Post = ({ post }) => {
-  const user = post.user || 'ananymous';
+const Post = ({ post, users}) => {
+  // const user = post.user || 'ananymous';
   const displayTag = (tags) => {
     return (
       tags.map(newTag => {
-        console.log(newTag);
-        return newTag
+        return ' ' + newTag + ' '
       })
     )
-
   }
+
+  /* pid => post.id 
+    such a complicated thing
+    but works
+  */
+  const displayUserName = (u, pid) => {
+    const data = u.filter(us => (us.id === pid))
+    return ( (data[0]).firstName + ' ' + (data[0]).lastName)
+  }
+
   return (
     <article className="post">
         <Link to={`/post/${post.id}`}>
             {/* <p className="author">{post.user}</p> */}
             <h2>{post.title}</h2>
-            <p className="postData">{user + " • " + displayTag(post.tags)}</p>
+            <p className="postData">{displayUserName(users, post.id) + " • " + displayTag(post.tags)}</p>
         </Link>
         <p className="postBody">
             {
