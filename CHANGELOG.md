@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.17.0](https://github.com/ptech12/blogiverse/compare/v0.16.2...v0.17.0) (2024-02-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* **core:** a simple change was made to fetch data from dummyjson server to display the posts. Technically everything works as it is.
+
+### Features
+
+* **core:** use dummyJson server a data ([c2e4452](https://github.com/ptech12/blogiverse/commit/c2e44524cf837369367febcfcec4f882f2fe1b9b))
+
+
+### Bug Fixes
+
+* **app:** minor bug fixes App.js" ([cee828f](https://github.com/ptech12/blogiverse/commit/cee828fbe94279125715ca5c129ba9b278ce5b96))
+
 ### [0.16.3](https://github.com/ptech12/blogiverse/compare/v0.16.2...v0.16.3) (2024-02-11)
 
 
