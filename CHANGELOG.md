@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.16.3](https://github.com/ptech12/blogiverse/compare/v0.16.2...v0.16.3) (2024-02-11)
+
+
+### Bug Fixes
+
+* **app:** minor bug fixes App.js" ([54345d8](https://github.com/ptech12/blogiverse/commit/54345d8567f2a52fd7677780e8f6817fe43b1c7f))
+
 ### [0.16.2](https://github.com/ptech12/blogiverse/compare/v0.16.1...v0.16.2) (2024-02-10)
 
 
