@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.18.0](https://github.com/ptech12/blogiverse/compare/v0.17.0...v0.18.0) (2024-02-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* **core:** in a complicated way the user full names is displayed in both Home and PostPags components. By using same axios API to the dummyjson as posts works
+
+### Features
+
+* **core:** user full names can be displayed in both Home and PostPage ([23f0e47](https://github.com/ptech12/blogiverse/commit/23f0e470ae7ed364cee980677067691574c4bb44))
+
 ## [0.17.0](https://github.com/ptech12/blogiverse/compare/v0.16.2...v0.17.0) (2024-02-11)
 
 
