@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.18.1](https://github.com/ptech12/blogiverse/compare/v0.18.0...v0.18.1) (2024-02-12)
+
+
+### Features
+
+* **app:** Add window width custom hooks ([1c81a9f](https://github.com/ptech12/blogiverse/commit/1c81a9f7e100aeb7eee3f864ca69a91f663e6c87))
+
+
+### Bug Fixes
+
+* **app:** minor bug fixes" ([d1f6a17](https://github.com/ptech12/blogiverse/commit/d1f6a178068dc19f0d780f0313a62882ca48e99e))
+
 ## [0.18.0](https://github.com/ptech12/blogiverse/compare/v0.17.0...v0.18.0) (2024-02-11)
 
 
