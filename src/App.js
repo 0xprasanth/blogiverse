@@ -95,10 +95,10 @@ function App() {
     e.preventDefault(); 
     const id = posts.length ? posts[posts.length - 1].id + 1 : 1;
     const datetime = format(new Date(), 'MMM dd, yyyy p'); 
-    const newPost = { id, title: postTitle, datetime, body: postBody};
+    const newPost = { id, title: postTitle, body: postBody};
 
     try {
-      const resp = await api.post('/posts', newPost)
+      const resp = await api.post('/posts/add', newPost)
       const allPosts = [...posts, resp.data];
       setPosts(allPosts);
       setPostTitle('');
