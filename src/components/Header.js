@@ -1,16 +1,18 @@
-import React from 'react'
+import React from "react";
+import { FaLaptop, FaTabletAlt, FaMobileAlt } from "react-icons/fa";
 
 const Header = ({ title }) => {
   return (
-    <header className='Header'>
-        <h1>{title}</h1>
+    <header className="Header">
+      <h1>
+        {title}
+      </h1>
     </header>
-  )
-}
-
+  );
+};
 
 Header.defaultProps = {
-  title: 'Blogiverse'
-}
+  title: "Blogiverse",
+};
 
-export default Header
+export default Header;

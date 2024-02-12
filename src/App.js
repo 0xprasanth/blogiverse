@@ -12,6 +12,7 @@ import { format } from "date-fns";
 import api from './api/posts'
 import userApi from './api/users'
 import EditPost from "./components/EditPost";
+import useWindowSize from "./hooks/useWindowSize";
 
 function App() {
   // using states for posts
@@ -29,6 +30,7 @@ function App() {
   const [users, setUsers] = useState([])
 
   const navigate = useNavigate();
+  const { width } = useWindowSize();
 
 
   useEffect(()=>{
@@ -143,7 +145,7 @@ function App() {
     <Routes>
       <Route
         path="/"
-        element={<Layout postsCount={searchResult.length} search={search} setSearch={setSearch} />}
+        element={<Layout width={width} postsCount={searchResult.length} search={search} setSearch={setSearch} />}
       >
 
       {/* index will be replaced by <Outlet /> component */}
