@@ -36,7 +36,7 @@ function App() {
   useEffect(()=>{
     const fetchPosts = async () => {
       try{
-        const resp = await api.get('/posts?limit=10');
+        const resp = await api.get('/posts?limit=30');
         /*  axios automatically converts to json object */
         setPosts(resp.data.posts);
       }catch (err) {
@@ -54,7 +54,7 @@ function App() {
     }
     const fetchUsers = async () => {
       try {
-        const response = await userApi.get('/users?limit=10')
+        const response = await userApi.get('/users?limit=30')
         setUsers(response.data.users)
       } catch (err) {
         if (err.resp) {
@@ -106,6 +106,8 @@ function App() {
       navigate("/");
     } catch (err) {
       console.error(`Error: ${err.message}`);
+      alert(`Error: ${err.message}`);
+      
       
     }
 
