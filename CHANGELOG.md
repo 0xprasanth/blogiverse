@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.18.2](https://github.com/ptech12/blogiverse/compare/v0.18.1...v0.18.2) (2024-02-13)
+
+
+### Bug Fixes
+
+* **app:** add more posts ([483bb79](https://github.com/ptech12/blogiverse/commit/483bb7900903cd396bc65ff03447031108bd5e84))
+
 ### [0.18.1](https://github.com/ptech12/blogiverse/compare/v0.18.0...v0.18.1) (2024-02-12)
 
 
