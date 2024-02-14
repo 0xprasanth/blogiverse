@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.18.6](https://github.com/ptech12/blogiverse/compare/v0.18.5...v0.18.6) (2024-02-14)
+
+
+### Bug Fixes
+
+* **core:** warning free compilation ([ecc824b](https://github.com/ptech12/blogiverse/commit/ecc824b4988c39cb7229080fcee510885886edca))
+
 ### [0.18.5](https://github.com/ptech12/blogiverse/compare/v0.18.4...v0.18.5) (2024-02-14)
 
 
