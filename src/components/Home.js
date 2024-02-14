@@ -1,5 +1,6 @@
 import React from 'react'
 import Feed from './Feed'
+// import {  } from "react-sp";
 
 const Home = ({ posts, users, fetchError, isLoading }) => {
   return (
@@ -8,7 +9,7 @@ const Home = ({ posts, users, fetchError, isLoading }) => {
         isLoading && <p className="statusMsg">Loading posts...</p>
       }
       {
-        fetchError && <p style={{color:"red"}} className="statusMsg">Error Fetching posts...</p>
+        !isLoading && fetchError && <p style={{color:"red"}} className="statusMsg">Error Fetching posts...</p>
       }
       {
         !isLoading && !fetchError && (
