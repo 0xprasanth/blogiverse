@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.18.5](https://github.com/ptech12/blogiverse/compare/v0.18.4...v0.18.5) (2024-02-14)
+
+
+### Features
+
+* **app:** add react-spinners support ([a49574a](https://github.com/ptech12/blogiverse/commit/a49574ab23157c3bb84d8512eb752b46b59563a5))
+
+
+### Bug Fixes
+
+* **app:** use react-spinners properly in loading area ([d90697f](https://github.com/ptech12/blogiverse/commit/d90697f944dde8046f9b4a7c645bcb738d0dd654))
+
 ### [0.18.4](https://github.com/ptech12/blogiverse/compare/v0.18.3...v0.18.4) (2024-02-14)
 
 
