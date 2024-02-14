@@ -4,15 +4,18 @@ import Home from "./components/Home";
 import NewPost from "./components/NewPost";
 import NotFound from "./components/NotFound";
 import PostPage from "./components/PostPage";
+import Layout from "./components/Layout";
 // router-dom import
 import { Routes, Route, useNavigate } from "react-router-dom";
-import Layout from "./components/Layout";
 import { format } from "date-fns";
 // api routes
-import api from './api/posts'
-import userApi from './api/users'
+import api from "./api/posts";
+import userApi from "./api/users";
 import EditPost from "./components/EditPost";
 import useWindowSize from "./hooks/useWindowSize";
+import { DataProvider } from "./context/DataContext";
+import useAxiosFetch from "./hooks/useAxiosFetch";
+
 
 function App() {
   // using states for posts
@@ -22,54 +25,61 @@ function App() {
   // search results
   const [searchResult, setSearchResult] = useState([]);
   // new post state
-  const [postTitle, setPostTitle] = useState('')
-  const [postBody, setPostBody] = useState('')
-  const [editTitle, setEditTitle] = useState('')
-  const [editBody, setEditBody] = useState('')
+  const [postTitle, setPostTitle] = useState("");
+  const [postBody, setPostBody] = useState("");
+  const [editTitle, setEditTitle] = useState("");
+  const [editBody, setEditBody] = useState("");
   // user data
-  const [users, setUsers] = useState([])
+  const [users, setUsers] = useState([]);
 
   const navigate = useNavigate();
   const { width } = useWindowSize();
+  const { data, fetchError, isLoading } = useAxiosFetch('https://dummyjson.com/posts?limit=30')
 
+  useEffect(() => {
+    
+    setPosts(data);
+  }, [data] )
 
-  useEffect(()=>{
-    const fetchPosts = async () => {
-      try{
-        const resp = await api.get('/posts?limit=30');
-        /*  axios automatically converts to json object */
-        setPosts(resp.data.posts);
-      }catch (err) {
-        /* Nog in the 200 response range */
-        /* know what you are dealing with backend */
-        /* know what you will get from the backend */
-        if (err.resp) {
-          console.error(err.resp.data);
-          console.log(err.resp.status);
-          console.log(err.resp.headers);
-        }else{
-          console.log(`Error: ${err.message}`);
-        }
-      }
-    }
+  useEffect(() => {
+    // const fetchPosts = async () => {
+    //   try {
+    //     const resp = await api.get("/posts?limit=30");
+    //     /*  axios automatically converts to json object */
+    //     setPosts(resp.data.posts);
+    //   } catch (err) {
+    //     /* Nog in the 200 response range */
+    //     /* know what you are dealing with backend */
+    //     /* know what you will get from the backend */
+    //     if (err.resp) {
+    //       console.error(err.resp.data);
+    //       console.log(err.resp.status);
+    //       console.log(err.resp.headers);
+    //     } else {
+    //       console.log(`Error: ${err.message}`);
+    //     }
+    //   }
+    // };
+
     const fetchUsers = async () => {
       try {
-        const response = await userApi.get('/users?limit=30')
-        setUsers(response.data.users)
+        const response = await userApi.get("/users?limit=30");
+        setUsers(response.data.users);
       } catch (err) {
         if (err.resp) {
           console.error(err.resp.data);
           console.log(err.resp.status);
           console.log(err.resp.headers);
-        }else{
+        } else {
           console.log(`Error: ${err.message}`);
         }
-      } 
-    }
-    fetchPosts();
+      }
+    }; 
+    
+    // fetchPosts();
     fetchUsers();
     // console.log(posts);
-  }, []) 
+  }, []);
 
   /*
     posts X search are dependency 
@@ -78,58 +88,50 @@ function App() {
     that both matches [search] 
   */
   useEffect(() => {
-    const filteredResults = posts.filter( post => 
-      (post.body).toLowerCase().includes(search.toLowerCase())
-      || // OR short circuit
-      (post.title).toLowerCase().includes(search.toLowerCase())
-    )
+    console.log(posts);
+    const filteredResults = posts.filter( (post) =>
+        post.body.toLowerCase().includes(search.toLowerCase()) || // OR short circuit
+        post.title.toLowerCase().includes(search.toLowerCase())
+    );
     setSearchResult(filteredResults);
-  }, [posts, search])
-  
-
-
+  }, [posts, search]);
 
   /* handle submit func to submit new post */
-  const handleSubmit = async e=> {
+  const handleSubmit = async (e) => {
     // C in Create
-    e.preventDefault(); 
+    e.preventDefault();
     const id = posts.length ? posts[posts.length - 1].id + 1 : 1;
-    const datetime = format(new Date(), 'MMM dd, yyyy p'); 
-    const newPost = { id, title: postTitle, body: postBody};
+    // const datetime = format(new Date(), 'MMM dd, yyyy p');
+    const newPost = { id, title: postTitle, body: postBody };
 
     try {
-      const resp = await api.post('/posts/add', newPost)
+      const resp = await api.post("/posts/add", newPost);
       const allPosts = [...posts, resp.data];
       setPosts(allPosts);
-      setPostTitle('');
-      setPostBody('');
+      setPostTitle("");
+      setPostBody("");
       navigate("/");
     } catch (err) {
       console.error(`Error: ${err.message}`);
       alert(`Error: ${err.message}`);
-      
-      
     }
-
-  }
+  };
 
   const handleEdit = async (id) => {
-    const datetime = format(new Date(), 'MMM dd, yyyy p'); 
-    const updatePost = { id, title: editTitle, datetime, body: editBody};
+    const datetime = format(new Date(), "MMM dd, yyyy p");
+    const updatePost = { id, title: editTitle, datetime, body: editBody };
     try {
       // update block
       const resp = await api.put(`/posts?id=${id}`, updatePost);
       // only update the posts that match the id else keep it as it is
-      setPosts(posts.map(post => post.id === id ? { ...resp.data} : post))
-      setEditBody('');
-      setEditTitle('')
+      setPosts(posts.map((post) => (post.id === id ? { ...resp.data } : post)));
+      setEditBody("");
+      setEditTitle("");
       navigate("/");
     } catch (err) {
       console.error(`Error: ${err.message}`);
-      
     }
-
-  }
+  };
 
   /* habndle delete */
   const handleDelete = async (id) => {
@@ -144,53 +146,73 @@ function App() {
   };
 
   return (
-    <Routes>
-      <Route
-        path="/"
-        element={<Layout width={width} postsCount={searchResult.length} search={search} setSearch={setSearch} />}
-      >
-
-      {/* index will be replaced by <Outlet /> component */}
-
-      <Route index element={<Home users={users} posts={searchResult} />} />
-
-      <Route path="post">
-        
-        <Route index element={
-          <NewPost
-            handleSubmit={handleSubmit}
-            postTitle={postTitle}
-            setPostTitle={setPostTitle}
-            postBody={postBody}
-            setPostBody={setPostBody}
-          />
-        } />
-        
+    <DataProvider>
+      <Routes>
         <Route
-          path="/post/:id"
-          element={<PostPage users={users} posts={posts} handleDelete={handleDelete} />}
-          />
-        
-      </Route>
-      <Route path="edit">
-          <Route path="/edit/:id"
+          path="/"
           element={
-          <EditPost
-            posts={posts}
-            handleEdit={handleEdit}
-            editBody={editBody}
-            setEditBody={setEditBody}
-            setEditTitle={setEditTitle}
-            editTitle={editTitle}
+            <Layout
+              width={width}
+              postsCount={searchResult.length}
+              search={search}
+              setSearch={setSearch}
+            />
+          }
+        >
+          {/* index will be replaced by <Outlet /> component */}
+
+          <Route index element={<Home users={users} posts={searchResult} 
+          fetchError={fetchError}
+          isLoading={isLoading}
           />} />
-      </Route>
 
-      <Route path="about" element={<About />} />
-      {/* not found */}
-      <Route path="*" element={<NotFound />} />
+          <Route path="post">
+            <Route
+              index
+              element={
+                <NewPost
+                  handleSubmit={handleSubmit}
+                  postTitle={postTitle}
+                  setPostTitle={setPostTitle}
+                  postBody={postBody}
+                  setPostBody={setPostBody}
+                />
+              }
+            />
 
-      </Route>
-    </Routes>
+            <Route
+              path="/post/:id"
+              element={
+                <PostPage
+                  users={users}
+                  posts={posts}
+                  handleDelete={handleDelete}
+                />
+              }
+            />
+          </Route>
+          <Route path="edit">
+            <Route
+              path="/edit/:id"
+              element={
+                <EditPost
+                  posts={posts}
+                  handleEdit={handleEdit}
+                  editBody={editBody}
+                  setEditBody={setEditBody}
+                  setEditTitle={setEditTitle}
+                  editTitle={editTitle}
+                />
+              }
+            />
+          </Route>
+
+          <Route path="about" element={<About />} />
+          {/* not found */}
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
+    </DataProvider>
   );
 }
 
