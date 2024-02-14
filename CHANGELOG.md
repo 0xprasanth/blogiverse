@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.18.3](https://github.com/ptech12/blogiverse/compare/v0.18.2...v0.18.3) (2024-02-14)
+
+
+### Features
+
+* **app:** Add DataContext provider and context api along with custom hook effect ([6e56069](https://github.com/ptech12/blogiverse/commit/6e560695e92747ae746bec540fe98498c428bffe))
+
+
+### Bug Fixes
+
+* **app:** minor bug fix by useAxiosFetch ([45ddab1](https://github.com/ptech12/blogiverse/commit/45ddab114e0af442248b37e738ccfda29a8b3712))
+
 ### [0.18.2](https://github.com/ptech12/blogiverse/compare/v0.18.1...v0.18.2) (2024-02-13)
 
 
