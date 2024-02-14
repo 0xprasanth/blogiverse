@@ -296,6 +296,14 @@ footer{
 .linkedin{
   color: var(--blue-70);
 }
+
+
+.loadingStyles{
+  color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 /* .about-me{
   padding: .5rem;
   width: 100%;

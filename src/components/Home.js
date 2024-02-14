@@ -1,22 +1,31 @@
-import React from 'react'
-import Feed from './Feed'
+import React from "react";
+import Feed from "./Feed";
+import { ClockLoader } from "react-spinners";
 // import {  } from "react-sp";
 
 const Home = ({ posts, users, fetchError, isLoading }) => {
+  const loadingStyles = {
+    color: 'red',
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  }
   return (
-    <main className='Home'>
-      {
-        isLoading && <p className="statusMsg">Loading posts...</p>
-      }
-      {
-        !isLoading && fetchError && <p style={{color:"red"}} className="statusMsg">Error Fetching posts...</p>
-      }
-      {
-        !isLoading && !fetchError && (
-          posts.length ? <Feed users={users} posts={posts} />
-           : <p className="statusMsg">No post to display</p>
-        )
-      }
+    <main className="Home">
+      <ClockLoader loading={isLoading} cssOverride={loadingStyles} className="loadingStyles" speedMultiplier={5} size={100}/>
+      
+      {!isLoading && fetchError && (
+        <p style={{ color: "red" }} className="statusMsg">
+          Error Fetching posts...
+        </p>
+      )}
+      {!isLoading &&
+        !fetchError &&
+        (posts.length ? (
+          <Feed users={users} posts={posts} />
+        ) : (
+          <p className="statusMsg">No post to display</p>
+        ))}
       {/* {
         posts.length ? (
           // feed component
@@ -28,9 +37,8 @@ const Home = ({ posts, users, fetchError, isLoading }) => {
           </p>
         )
       } */}
-      
     </main>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
