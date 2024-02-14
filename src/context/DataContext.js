@@ -7,19 +7,38 @@ import api from "../api/posts";
 import userApi from "../api/users";
 import useWindowSize from "../hooks/useWindowSize";
 
-const DataContext = createContext();
+import useAxiosFetch from '../hooks/useAxiosFetch';
 
-export const DataProvider = ( { childern } ) => {
+const DataContext = createContext({});
+
+export const DataProvider = ({ children }) => {
+    const [posts, setPosts] = useState([])
+    const [search, setSearch] = useState('');
+    const [searchResults, setSearchResults] = useState([]);
+
+    const { data, fetchError, isLoading } = useAxiosFetch('https://dummyjson.com/posts?limit=30');
+
+    useEffect(() => {
+        setPosts(data);
+    }, [data])
+
+    useEffect(() => {
+        const filteredResults = posts.filter((post) =>
+            ((post.body).toLowerCase()).includes(search.toLowerCase())
+            || ((post.title).toLowerCase()).includes(search.toLowerCase()));
+
+        setSearchResults(filteredResults.reverse());
+    }, [posts, search])
+
     return (
         <DataContext.Provider value={{
-            
+            search, setSearch,
+            searchResults, fetchError, isLoading,
+            posts, setPosts
         }}>
-            {
-                childern
-            }
+            {children}
         </DataContext.Provider>
-    );
+    )
 }
-
 
 export default DataContext;
