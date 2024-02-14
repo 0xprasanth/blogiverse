@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.18.4](https://github.com/ptech12/blogiverse/compare/v0.18.3...v0.18.4) (2024-02-14)
+
+
+### Bug Fixes
+
+* **app:** fix Loading Post and Error status msg that displays at same time ([ce2adf6](https://github.com/ptech12/blogiverse/commit/ce2adf684a3360ae64d6558542f4a8d1e27df10b))
+* **axios:** loading time decreased by 5 seconds ([3b12575](https://github.com/ptech12/blogiverse/commit/3b125751d0e265740e2dd0837e7b132bdca4bcf3))
+
 ### [0.18.3](https://github.com/ptech12/blogiverse/compare/v0.18.2...v0.18.3) (2024-02-14)
 
 
