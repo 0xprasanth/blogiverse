@@ -1,46 +1,117 @@
 import { createContext, useState, useEffect } from "react";
 // // router-dom import
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { format } from "date-fns";
 // // api routes
 import api from "../api/posts";
 import userApi from "../api/users";
 import useWindowSize from "../hooks/useWindowSize";
-import useAxiosFetch from '../hooks/useAxiosFetch';
+import useAxiosFetch from "../hooks/useAxiosFetch";
 
 const DataContext = createContext({});
 
 export const DataProvider = ({ children }) => {
-    const [posts, setPosts] = useState([])
-    const [search, setSearch] = useState('');
-    const [searchResults, setSearchResults] = useState([]);
+  const [posts, setPosts] = useState([]);
+  const [search, setSearch] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+  // new post state
+  const [postTitle, setPostTitle] = useState("");
+  const [postBody, setPostBody] = useState("");
+  const [editTitle, setEditTitle] = useState("");
+  const [editBody, setEditBody] = useState("");
+  const [users, setUsers] = useState([]);
 
-    const [users, setUsers] = useState([]);
 
-    const { data, fetchError, isLoading } = useAxiosFetch('https://dummyjson.com/posts?limit=30');
+  const { data, fetchError, isLoading } = useAxiosFetch(
+    "https://dummyjson.com/posts?limit=30"
+  );
 
-    useEffect(() => {
-        setPosts(data);
-    }, [data])
+  const navigate = useNavigate();
+  useEffect(() => {
+    setPosts(data);
+  }, [data]);
 
-    useEffect(() => {
-        const filteredResults = posts.filter((post) =>
-            ((post.body).toLowerCase()).includes(search.toLowerCase())
-            || ((post.title).toLowerCase()).includes(search.toLowerCase()));
+  useEffect(() => {
+    const filteredResults = posts.filter(
+      (post) =>
+        post.body.toLowerCase().includes(search.toLowerCase()) ||
+        post.title.toLowerCase().includes(search.toLowerCase())
+    );
 
-        setSearchResults(filteredResults.reverse());
-    }, [posts, search])
-    const { width } = useWindowSize();
+    setSearchResults(filteredResults.reverse());
+  }, [posts, search]);
+  const { width } = useWindowSize();
 
-    return (
-        <DataContext.Provider value={{
-            search, setSearch,
-            searchResults, fetchError, isLoading,
-            posts, setPosts, width
-        }}>
-            {children}
-        </DataContext.Provider>
-    )
-}
+  /* handle submit func to submit new post */
+  const handleSubmit = async (e) => {
+    // C in Create
+    e.preventDefault();
+    const id = posts.length ? posts[posts.length - 1].id + 1 : 1;
+    // const datetime = format(new Date(), 'MMM dd, yyyy p');
+    const newPost = { id, title: postTitle, body: postBody };
+
+    try {
+      const resp = await api.post("/posts/add", newPost);
+      const allPosts = [...posts, resp.data];
+      setPosts(allPosts);
+      setPostTitle("");
+      setPostBody("");
+      navigate("/");
+    } catch (err) {
+      console.error(`Error: ${err.message}`);
+      alert(`Error: ${err.message}`);
+    }
+  };
+
+  const handleEdit = async (id) => {
+    const datetime = format(new Date(), "MMM dd, yyyy p");
+    const updatePost = { id, title: editTitle, datetime, body: editBody };
+    try {
+      // update block
+      const resp = await api.put(`/posts?id=${id}`, updatePost);
+      // only update the posts that match the id else keep it as it is
+      setPosts(posts.map((post) => (post.id === id ? { ...resp.data } : post)));
+      setEditBody("");
+      setEditTitle("");
+      navigate("/");
+    } catch (err) {
+      console.error(`Error: ${err.message}`);
+    }
+  };
+
+  /* habndle delete */
+  const handleDelete = async (id) => {
+    // D for delete
+    try {
+      const postList = posts.filter((post) => post.id !== id);
+      setPosts(postList);
+      navigate("/");
+    } catch (err) {
+      console.error(`Error: ${err.message}`);
+    }
+  };
+
+  return (
+    <DataContext.Provider
+      value={{
+        search,
+        setSearch,
+        searchResults,
+        fetchError,
+        isLoading,
+        posts,
+        setPosts,
+        width,
+        handleSubmit,
+        postTitle,
+        setPostTitle,
+        postBody,
+        setPostBody,
+      }}
+    >
+      {children}
+    </DataContext.Provider>
+  );
+};
 
 export default DataContext;

@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import Feed from "./Feed";
 import { ClockLoader } from "react-spinners";
+import DataContext from "../context/DataContext";
 // import {  } from "react-sp";
 
-const Home = ({ posts, users, fetchError, isLoading }) => {
+const Home = ({ users }) => {
   const loadingStyles = {
     color: 'red',
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
   }
+  const { searchResults, fetchError, isLoading } = useContext(DataContext);
+
   return (
     <main className="Home">
       <ClockLoader loading={isLoading} cssOverride={loadingStyles} className="loadingStyles" speedMultiplier={5} size={100}/>
@@ -21,8 +24,8 @@ const Home = ({ posts, users, fetchError, isLoading }) => {
       )}
       {!isLoading &&
         !fetchError &&
-        (posts.length ? (
-          <Feed users={users} posts={posts} />
+        (searchResults.length ? (
+          <Feed users={users} posts={searchResults} />
         ) : (
           <p className="statusMsg">No post to display</p>
         ))}
