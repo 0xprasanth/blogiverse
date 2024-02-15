@@ -155,44 +155,13 @@ function App() {
           <Route index element={<Home users={users} />} />
 
           <Route path="post">
-            <Route
-              index
-              element={
-                <NewPost
-                  handleSubmit={handleSubmit}
-                  postTitle={postTitle}
-                  setPostTitle={setPostTitle}
-                  postBody={postBody}
-                  setPostBody={setPostBody}
-                />
-              }
-            />
+            <Route index element={<NewPost />} />
 
-            <Route
-              path="/post/:id"
-              element={
-                <PostPage
-                  users={users}
-                  posts={posts}
-                  handleDelete={handleDelete}
-                />
-              }
-            />
+            <Route path="/post/:id" element={<PostPage users={users} />} />
           </Route>
+          
           <Route path="edit">
-            <Route
-              path="/edit/:id"
-              element={
-                <EditPost
-                  posts={posts}
-                  handleEdit={handleEdit}
-                  editBody={editBody}
-                  setEditBody={setEditBody}
-                  setEditTitle={setEditTitle}
-                  editTitle={editTitle}
-                />
-              }
-            />
+            <Route path="/edit/:id" element={<EditPost />} />
           </Route>
 
           <Route path="about" element={<About />} />
