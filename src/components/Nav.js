@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import Header from "./Header";
 import { Link } from "react-router-dom";
 import { FaLaptop, FaTabletAlt, FaMobileAlt } from "react-icons/fa";
+import DataContext from "../context/DataContext";
 
-const Nav = ({ width, search, setSearch }) => {
+const Nav = ({  }) => {
+  const { width, search, setSearch } = useContext(DataContext)
+  console.log(width);
+  console.log(DataContext);
+
   return (
     <>
       <nav className="Nav">

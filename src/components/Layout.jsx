@@ -4,10 +4,10 @@ import Nav from "./Nav"
 
 
 
-const Layout = ({ width, search, setSearch, postsCount }) => {
+const Layout = ({  search, setSearch, postsCount }) => {
   return (
     <div className="App">
-        <Nav width={width} search={search} setSearch={setSearch} />
+        <Nav search={search} setSearch={setSearch} />
         {/* Remaining components to be displayed */}
         <Outlet /> 
 

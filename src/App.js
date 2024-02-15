@@ -33,7 +33,7 @@ function App() {
   const [users, setUsers] = useState([]);
 
   const navigate = useNavigate();
-  const { width } = useWindowSize();
+
   const { data, fetchError, isLoading } = useAxiosFetch('https://dummyjson.com/posts?limit=30')
 
   useEffect(() => {
@@ -152,7 +152,6 @@ function App() {
           path="/"
           element={
             <Layout
-              width={width}
               postsCount={searchResult.length}
               search={search}
               setSearch={setSearch}
