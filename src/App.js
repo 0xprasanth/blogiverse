@@ -17,50 +17,11 @@ import { DataProvider } from "./context/DataContext";
 import useAxiosFetch from "./hooks/useAxiosFetch";
 
 function App() {
-  // using states for posts
-  const [posts, setPosts] = useState([]);
-  // for search items
-  const [search, setSearch] = useState("");
-  // search results
-  const [searchResult, setSearchResult] = useState([]);
-  // new post state
-  const [postTitle, setPostTitle] = useState("");
-  const [postBody, setPostBody] = useState("");
-  const [editTitle, setEditTitle] = useState("");
-  const [editBody, setEditBody] = useState("");
   // user data
   const [users, setUsers] = useState([]);
 
-  const navigate = useNavigate();
-
-  const { data, fetchError, isLoading } = useAxiosFetch(
-    "https://dummyjson.com/posts?limit=30"
-  );
 
   useEffect(() => {
-    setPosts(data);
-  }, [data]);
-
-  useEffect(() => {
-    // const fetchPosts = async () => {
-    //   try {
-    //     const resp = await api.get("/posts?limit=30");
-    //     /*  axios automatically converts to json object */
-    //     setPosts(resp.data.posts);
-    //   } catch (err) {
-    //     /* Nog in the 200 response range */
-    //     /* know what you are dealing with backend */
-    //     /* know what you will get from the backend */
-    //     if (err.resp) {
-    //       console.error(err.resp.data);
-    //       console.log(err.resp.status);
-    //       console.log(err.resp.headers);
-    //     } else {
-    //       console.log(`Error: ${err.message}`);
-    //     }
-    //   }
-    // };
-
     const fetchUsers = async () => {
       try {
         const response = await userApi.get("/users?limit=30");
@@ -80,71 +41,6 @@ function App() {
     fetchUsers();
     // console.log(posts);
   }, []);
-
-  /*
-    posts X search are dependency 
-    as our search input provides new data
-    to the [search's] essentially filter the posts
-    that both matches [search] 
-  */
-  useEffect(() => {
-    // console.log(posts);
-    const filteredResults = posts.filter(
-      (post) =>
-        post.body.toLowerCase().includes(search.toLowerCase()) || // OR short circuit
-        post.title.toLowerCase().includes(search.toLowerCase())
-    );
-    setSearchResult(filteredResults);
-  }, [posts, search]);
-
-  /* handle submit func to submit new post */
-  const handleSubmit = async (e) => {
-    // C in Create
-    e.preventDefault();
-    const id = posts.length ? posts[posts.length - 1].id + 1 : 1;
-    // const datetime = format(new Date(), 'MMM dd, yyyy p');
-    const newPost = { id, title: postTitle, body: postBody };
-
-    try {
-      const resp = await api.post("/posts/add", newPost);
-      const allPosts = [...posts, resp.data];
-      setPosts(allPosts);
-      setPostTitle("");
-      setPostBody("");
-      navigate("/");
-    } catch (err) {
-      console.error(`Error: ${err.message}`);
-      alert(`Error: ${err.message}`);
-    }
-  };
-
-  const handleEdit = async (id) => {
-    const datetime = format(new Date(), "MMM dd, yyyy p");
-    const updatePost = { id, title: editTitle, datetime, body: editBody };
-    try {
-      // update block
-      const resp = await api.put(`/posts?id=${id}`, updatePost);
-      // only update the posts that match the id else keep it as it is
-      setPosts(posts.map((post) => (post.id === id ? { ...resp.data } : post)));
-      setEditBody("");
-      setEditTitle("");
-      navigate("/");
-    } catch (err) {
-      console.error(`Error: ${err.message}`);
-    }
-  };
-
-  /* habndle delete */
-  const handleDelete = async (id) => {
-    // D for delete
-    try {
-      const postList = posts.filter((post) => post.id !== id);
-      setPosts(postList);
-      navigate("/");
-    } catch (err) {
-      console.error(`Error: ${err.message}`);
-    }
-  };
 
   return (
     <DataProvider>
