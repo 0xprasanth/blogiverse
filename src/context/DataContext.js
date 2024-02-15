@@ -90,6 +90,19 @@ export const DataProvider = ({ children }) => {
       console.error(`Error: ${err.message}`);
     }
   };
+  /* Belongs to PostPage component */
+  const displayTag = (tags) => {
+    return (
+      tags.map(newTag => {
+        return newTag
+      })
+    )
+  }
+
+  const displayUserName = (u) => {
+    return u.firstName +' '+ u.lastName
+  }
+
 
   return (
     <DataContext.Provider
@@ -103,10 +116,18 @@ export const DataProvider = ({ children }) => {
         setPosts,
         width,
         handleSubmit,
+        handleDelete,
+        handleEdit,
         postTitle,
         setPostTitle,
         postBody,
         setPostBody,
+        editTitle,
+        setEditTitle,
+        editBody,
+        setEditBody,
+        displayTag,
+        displayUserName,
       }}
     >
       {children}
