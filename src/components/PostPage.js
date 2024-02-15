@@ -1,11 +1,38 @@
 import { useContext } from 'react';
 import { useParams, Link} from 'react-router-dom'
 import DataContext from '../context/DataContext';
+import { useNavigate } from "react-router-dom";
+import api from '../api/posts'
 
 const PostPage = ({ users }) => {
   const { id } = useParams();
 
-  const { displayTag, displayUserName, posts, handleDelete} = useContext(DataContext)
+  const { posts, setPosts } = useContext(DataContext)
+  const navigate = useNavigate();
+
+  /* habndle delete */
+  const handleDelete = async (id) => {
+    // D for delete
+    try {
+      const postList = posts.filter((post) => post.id !== id);
+      setPosts(postList);
+      navigate("/");
+    } catch (err) {
+      console.error(`Error: ${err.message}`);
+    }
+  };
+  /* Belongs to PostPage component */
+  const displayTag = (tags) => {
+    return (
+      tags.map(newTag => {
+        return newTag
+      })
+    )
+  }
+
+  const displayUserName = (u) => {
+    return u.firstName +' '+ u.lastName
+  }
 
   const post = posts.find(post => (post.id).toString() === id)
   const user = users.find(user => (user.id).toString() === id)
