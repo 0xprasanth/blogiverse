@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.18.7](https://github.com/ptech12/blogiverse/compare/v0.18.6...v0.18.7) (2024-02-15)
+
+
+### Bug Fixes
+
+* **core:** add DataContext provider in which the components use the data ([98e5069](https://github.com/ptech12/blogiverse/commit/98e50697549e7b51a2f8366e48cfbb72876e1c84))
+
 ### [0.18.6](https://github.com/ptech12/blogiverse/compare/v0.18.5...v0.18.6) (2024-02-14)
 
 
