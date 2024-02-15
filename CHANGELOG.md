@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.18.8](https://github.com/ptech12/blogiverse/compare/v0.18.7...v0.18.8) (2024-02-15)
+
+
+### Features
+
+* **app:** add DataContext provider to EditPost, PostPage Component ([1caa012](https://github.com/ptech12/blogiverse/commit/1caa0122fdbc626642d522c8c351377e97982d2d))
+* **app:** add DataContext provider to Home and Nav components ([60dbd1c](https://github.com/ptech12/blogiverse/commit/60dbd1c0ff218abac592f121d9a0607d3660847d))
+* **app:** add DataContext provider to Layout Component ([b2ff410](https://github.com/ptech12/blogiverse/commit/b2ff41013469b07c2682b475ea8a216b2be0076b))
+* **app:** use data from the DataContext provider whenever whatever they want ([bacb5ed](https://github.com/ptech12/blogiverse/commit/bacb5ed78df615f53cee66f29e3c02eb1092c21b))
+
+
+### Bug Fixes
+
+* **app:** Minor cleanup and console logs remove ([852e4f4](https://github.com/ptech12/blogiverse/commit/852e4f4e5f1904d2aff398c974c145c3608e63f9))
+* **app:** Minor cleanup and remove props ([1fe66e1](https://github.com/ptech12/blogiverse/commit/1fe66e1992e1689e54ac9d511154616cec564f0f))
+* **data-context:** add handling function for PostPage component ([4e0b323](https://github.com/ptech12/blogiverse/commit/4e0b323da91549d800fa937b60fdf1835fa562fa))
+
 ### [0.18.7](https://github.com/ptech12/blogiverse/compare/v0.18.6...v0.18.7) (2024-02-15)
 
 
