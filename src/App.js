@@ -149,26 +149,10 @@ function App() {
   return (
     <DataProvider>
       <Routes>
-        <Route
-          path="/"
-          element={
-            <Layout
-              postsCount={searchResult.length}
-              search={search}
-              setSearch={setSearch}
-            />
-          }
-        >
+        <Route path="/" element={<Layout />}>
           {/* index will be replaced by <Outlet /> component */}
 
-          <Route
-            index
-            element={
-              <Home
-                users={users}
-              />
-            }
-          />
+          <Route index element={<Home users={users} />} />
 
           <Route path="post">
             <Route
