@@ -1,19 +1,11 @@
+import { useContext } from 'react';
 import { useParams, Link} from 'react-router-dom'
+import DataContext from '../context/DataContext';
 
-const PostPage = ({ users, posts, handleDelete}) => {
+const PostPage = ({ users }) => {
   const { id } = useParams();
-  const isUser = posts.user || 'ananymous';
-  const displayTag = (tags) => {
-    return (
-      tags.map(newTag => {
-        return newTag
-      })
-    )
-  }
 
-  const displayUserName = (u) => {
-    return u.firstName +' '+ u.lastName
-  }
+  const { displayTag, displayUserName, posts, handleDelete} = useContext(DataContext)
 
   const post = posts.find(post => (post.id).toString() === id)
   const user = users.find(user => (user.id).toString() === id)
