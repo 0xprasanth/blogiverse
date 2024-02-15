@@ -1,36 +1,57 @@
-import { useCallback, useContext, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import NotFound from "./NotFound";
 import DataContext from "../context/DataContext";
+import api from '../api/posts'
 
-const EditPost = ({
-  // posts,
-  // handleEdit,
-  // editBody,
-  // setEditBody,
-  // editTitle,
-  // setEditTitle,
-}) => {
-  const {  posts,
-    handleEdit,
-    editBody,
-    setEditBody,
-    editTitle,
-    setEditTitle } = useContext(DataContext); 
+const EditPost = (
+  {
+    // posts,
+    // handleEdit,
+    // editBody,
+    // setEditBody,
+    // editTitle,
+    // setEditTitle,
+  }
+) => {
+  const { posts, setPosts } = useContext(DataContext);
+
+  const [editTitle, setEditTitle] = useState("");
+  const [editBody, setEditBody] = useState("");
 
   const { id } = useParams();
+
   const post = posts.find((post) => post.id.toString() === id);
+
+  const navigate = useNavigate(); 
+
   useEffect(() => {
     if (post) {
       setEditTitle(post.title);
       setEditBody(post.body);
     }
   }, [post, setEditBody, setEditTitle]);
+
+  const handleEdit = async (id) => {
+    const updatePost = { id, title: editTitle, body: editBody };
+    try {
+      // update block
+      const resp = await api.put(`/posts?id=${id}`, updatePost);
+      // only update the posts that match the id else keep it as it is
+      setPosts(posts.map((post) => (post.id === id ? { ...resp.data } : post)));
+      setEditBody("");
+      setEditTitle("");
+      navigate("/");
+    } catch (err) {
+      console.error(`Error: ${err.message}`);
+    }
+  };
+
   return (
     <main className="NewPost">
       <h2>New Post</h2>
       {editTitle && (
-        <form onSubmit={e => e.preventDefault()} className="newPostForm">
+        <form onSubmit={(e) => e.preventDefault()} className="newPostForm">
           {/* input title */}
           <label htmlFor="postTitle">Post title: </label>
           <input
@@ -54,15 +75,16 @@ const EditPost = ({
             placeholder="Body of the post"
           />
           {/* submit button */}
-          <button onClick={() => handleEdit(post.id)} type="submit">Submit</button>
+          <button onClick={() => handleEdit(post.id)} type="submit">
+            Submit
+          </button>
         </form>
       )}
-      {
-        !editTitle && 
-            <>
-                <NotFound />
-            </>
-      }
+      {!editTitle && (
+        <>
+          <NotFound />
+        </>
+      )}
     </main>
   );
 };
