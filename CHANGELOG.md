@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.18.9](https://github.com/ptech12/blogiverse/compare/v0.18.8...v0.18.9) (2024-02-15)
+
+
+### Bug Fixes
+
+* **data-context:** add function only to EditPosts and use DataProviders for posts ([221f861](https://github.com/ptech12/blogiverse/commit/221f861e6d7186847dcae38bcf4e79588d223eb3))
+* **data-context:** add function only to NewPosts and use DataProviders for posts ([cf7b6f3](https://github.com/ptech12/blogiverse/commit/cf7b6f32d5c936cb37bdcdd6794eb50730cc8c1c))
+* **data-context:** add function only to PostPage and use DataProviders for posts ([ac15bb9](https://github.com/ptech12/blogiverse/commit/ac15bb9ce041b38958d6bb56e614fa83f56de372))
+* **data-provider:** remove unused function and clean up around it ([0a76958](https://github.com/ptech12/blogiverse/commit/0a76958106d808509cba5a4fceb24dc2ecaa5b5c))
+* remove all functions and clean up ([4092a89](https://github.com/ptech12/blogiverse/commit/4092a89392093ae92a09728ac11a039e69711c97))
+
 ### [0.18.8](https://github.com/ptech12/blogiverse/compare/v0.18.7...v0.18.8) (2024-02-15)
 
 
