@@ -16,7 +16,6 @@ import useWindowSize from "./hooks/useWindowSize";
 import { DataProvider } from "./context/DataContext";
 import useAxiosFetch from "./hooks/useAxiosFetch";
 
-
 function App() {
   // using states for posts
   const [posts, setPosts] = useState([]);
@@ -34,12 +33,13 @@ function App() {
 
   const navigate = useNavigate();
 
-  const { data, fetchError, isLoading } = useAxiosFetch('https://dummyjson.com/posts?limit=30')
+  const { data, fetchError, isLoading } = useAxiosFetch(
+    "https://dummyjson.com/posts?limit=30"
+  );
 
   useEffect(() => {
-    
     setPosts(data);
-  }, [data] )
+  }, [data]);
 
   useEffect(() => {
     // const fetchPosts = async () => {
@@ -74,8 +74,8 @@ function App() {
           console.log(`Error: ${err.message}`);
         }
       }
-    }; 
-    
+    };
+
     // fetchPosts();
     fetchUsers();
     // console.log(posts);
@@ -88,8 +88,9 @@ function App() {
     that both matches [search] 
   */
   useEffect(() => {
-    console.log(posts);
-    const filteredResults = posts.filter( (post) =>
+    // console.log(posts);
+    const filteredResults = posts.filter(
+      (post) =>
         post.body.toLowerCase().includes(search.toLowerCase()) || // OR short circuit
         post.title.toLowerCase().includes(search.toLowerCase())
     );
@@ -160,10 +161,14 @@ function App() {
         >
           {/* index will be replaced by <Outlet /> component */}
 
-          <Route index element={<Home users={users} posts={searchResult} 
-          fetchError={fetchError}
-          isLoading={isLoading}
-          />} />
+          <Route
+            index
+            element={
+              <Home
+                users={users}
+              />
+            }
+          />
 
           <Route path="post">
             <Route

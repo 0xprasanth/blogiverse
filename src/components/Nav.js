@@ -6,9 +6,6 @@ import DataContext from "../context/DataContext";
 
 const Nav = ({  }) => {
   const { width, search, setSearch } = useContext(DataContext)
-  console.log(width);
-  console.log(DataContext);
-
   return (
     <>
       <nav className="Nav">
