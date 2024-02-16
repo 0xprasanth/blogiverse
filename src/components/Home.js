@@ -15,7 +15,7 @@ const Home = ({ users }) => {
 
   return (
     <main className="Home">
-      <ClockLoader loading={isLoading} cssOverride={loadingStyles} className="loadingStyles" speedMultiplier={5} size={100}/>
+      <ClockLoader loading={isLoading} cssOverride={loadingStyles} className="loadingStyles" speedMultiplier={9} size={150}/>
       
       {!isLoading && fetchError && (
         <p style={{ color: "red" }} className="statusMsg">
