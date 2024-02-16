@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.18.10](https://github.com/ptech12/blogiverse/compare/v0.18.9...v0.18.10) (2024-02-16)
+
+
+### Features
+
+* add redux-alt "easy-peasy" ([68288aa](https://github.com/ptech12/blogiverse/commit/68288aaf06d830a9c83407dfcb434252fede2dd2))
+* **redux:** USING EASY-PEASY TO STORE STATES ([5f80099](https://github.com/ptech12/blogiverse/commit/5f80099db2ff2215a57e809aeba36d01f6ae98bd))
+
 ### [0.18.9](https://github.com/ptech12/blogiverse/compare/v0.18.8...v0.18.9) (2024-02-15)
 
 
