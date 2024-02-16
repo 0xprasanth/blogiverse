@@ -2,7 +2,6 @@ import { useContext } from 'react';
 import { useParams, Link} from 'react-router-dom'
 import DataContext from '../context/DataContext';
 import { useNavigate } from "react-router-dom";
-import api from '../api/posts'
 
 const PostPage = ({ users }) => {
   const { id } = useParams();
