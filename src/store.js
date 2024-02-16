@@ -1,5 +1,6 @@
 import { createStore, action, thunk, computed } from "easy-peasy";
 import api from './api/posts';
+import { useResolvedPath } from "react-router-dom";
 
 
 export default createStore({
@@ -39,13 +40,15 @@ export default createStore({
     }),
 /* Using thunk to create a function to savePost */
 /* Using call back method inside "thunk" */
-    savePost: thunk( async (actions, newPost, helpers) => {
+    savePost: thunk( async (actions, updatedPost, helpers) => {
         const { posts } = helpers.getState();
         try {
-            
+            const response = await api.post(`/posts/${id}`, updatedPost);
+            actions.setPosts(posts.map(post => post.id === id ? { ...response.data } : post));
+            actions.setEditTitle('');
+            actions.setEditBody('');    
         } catch (err) {
-            
+            console.error(`Error: ${err.message}`);
         }
-
     })
 })
